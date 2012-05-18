@@ -93,8 +93,8 @@ bool want_longpoll = true;
 bool have_longpoll = false;
 bool use_syslog = false;
 static bool opt_quiet = false;
-static int opt_retries = 10;
-static int opt_fail_pause = 30;
+static int opt_retries = -1;
+static int opt_fail_pause = 20;
 int opt_scantime = 5;
 static json_t *opt_config;
 static const bool opt_time = true;
@@ -972,7 +972,7 @@ int main (int argc, char *argv[])
 	}
 
 	applog(LOG_INFO, "%d miner threads started, "
-		"using SHA256 '%s' algorithm.",
+		"using '%s' algorithm.",
 		opt_n_threads,
 		algo_names[opt_algo]);
 
