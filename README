@@ -1,4 +1,3 @@
-
 This is a multi-threaded CPU miner for Tenebrix, fork of Jeff Garzik's refernce cpuminer.
 New, GPU-hostile / CPU-friendly PoW is implemented.  
 
@@ -13,15 +12,10 @@ Dependencies:
 
 Basic *nix build instructions:
 	./autogen.sh	# only needed if building from git repo
-	CFLAGS="-O3 -Wall -msse2" ./configure
+	./configure CFLAGS="-O3 -maltivec -mcpu=G4"
 	make
 
-Basic WIN32 build instructions (on Fedora 13; requires mingw32):
-	./autogen.sh	# only needed if building from git repo
-	rm -f mingw32-config.cache
-	MINGW32_CFLAGS="-O3 -Wall -msse2" mingw32-configure
-	make
-	./mknsis.sh
+If you use a G5 PowerMac, it might be best to use mcpu=G5 instead.
 
 Usage instructions:  Run "minerd --help" to see options.
 
