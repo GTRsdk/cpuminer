@@ -894,7 +894,6 @@ int main (int argc, char *argv[])
 	if (!rpc_userpass) {
 		if (!rpc_user || !rpc_pass) {
 			applog(LOG_ERR, "No login credentials supplied");
-			return 1;
 		}
 		rpc_userpass = malloc(strlen(rpc_user) + strlen(rpc_pass) + 2);
 		if (!rpc_userpass)
